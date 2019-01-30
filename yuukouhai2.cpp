@@ -355,12 +355,16 @@ int main() {
     }
     //出力 シャンテン数 捨て牌候補の種類数 牌番号
     int syanten_number;
-    int kouhosuu;
+    int kouhosuu=0;
+	yuukouhai.set_tehai(t);//手配をセット
     syanten_number = yuukouhai.NormalSyanten();
 	// cout << "syanten" << syanten_number << endl;
 	cout << syanten_number << " ";
-    #define ARRAY_LENGTH(array) (sizeof(array) / sizeof(array[0]))
-    kouhosuu=ARRAY_LENGTH(hai_number);
+	for(i=0;i<38;i++){
+		if(hai_number[i]){
+			kouhosuu++;
+		}
+	}
     if(kouhosuu>5){
         cout << 5 << " ";
         kouhosuu = 5;
